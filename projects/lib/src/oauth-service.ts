@@ -1315,7 +1315,11 @@ export class OAuthService extends AuthConfig {
 
       const tokenKeys = ['access_token', 'refresh_token', 'expires_in', 'scope'];
       Object.keys(tokenResponse).forEach(key => {
-        if (!tokenKeys.includes(key)) { // don't store parameters related to token, stored elsewhere
+        let found = false;  
+        for (var i = 0; i < tokenKeys.length && !found; ++i) {
+            found = key === tokenKeys[i];
+        }
+        if (!found) { // don't store parameters related to token, stored elsewhere
           additionalParams[key] = tokenResponse[key];
         }
       });
@@ -1678,6 +1682,17 @@ export class OAuthService extends AuthConfig {
         });
     }
 
+    public getAssetTokenAsJwtJson(): object {
+        const idToken = this.getAccessToken();
+        if (idToken) {
+            const tokenParts = idToken.split('.');
+            const claimsBase64 = this.padBase64(tokenParts[1]);
+            const claimsJson = b64DecodeUnicode(claimsBase64);
+            return JSON.parse(claimsJson);
+        }
+        return null;
+    }
+
     /**
      * Returns the received claims about the user.
      */
@@ -1760,7 +1775,6 @@ export class OAuthService extends AuthConfig {
 
     /**
      * Get additional parameters that have been saved after a log in
-     * @returns {object} key:value pairs of additional parameters from oAuth login
      */
     public getAdditionalParameters(): object {
       if (!this._storage.getItem('additional_params')) {
