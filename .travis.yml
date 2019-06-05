@@ -1,21 +1,18 @@
 language: node_js
-node_js:
-  - "node"
-
-before_script:
-  - npm install cpr
-
-script: npm run build
-
+node_js: '10'
+script:
+  - yarn lint
+  - yarn build
+  - yarn test-ci
+cache:
+  yarn: true
 before_deploy:
   - cd dist/lib
-
 deploy:
   provider: npm
+  skip_cleanup: true
   email: $NPM_EMAIL
   api_key: $NPM_KEY
-  skip_cleanup: true
-
   on:
     tags: true
-
+    branch: master

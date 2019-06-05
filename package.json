@@ -1,12 +1,13 @@
 {
-  "name": "starter",
+  "name": "angular-oauth2-oidc-smart",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --project sample -o",
-    "build": "ng build --prod --project lib && npm run copy:readme",
+    "start": "ng serve",
+    "build": "ng build && npm run copy:readme",
     "test": "ng test",
+    "test-ci": "ng test --no-watch --no-progress --browsers=ChromeHeadlessNoSandbox --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "tsc": "tsc",

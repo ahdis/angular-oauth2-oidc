@@ -1,11 +1,11 @@
 {
-  "name": "angular-oauth2-oidc-codeflow",
+  "name": "angular-oauth2-oidc-smart",
   "license": "MIT",
   "author": {
-    "name": "Peer Bech Hansen"
+    "name": "Oliver Egger"
   },
-  "version": "4.0.1-rc.1",
-  "repository": "bechhansen/angular-oauth2-oidc-codeflow",
+  "version": "0.1.0",
+  "repository": "ahdis/angular-oauth2-oidcgit ",
   "dependencies": {
     "jsrsasign": "^8.0.12"
   },
