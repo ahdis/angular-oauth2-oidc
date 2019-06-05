@@ -5,7 +5,6 @@
     "name": "Oliver Egger"
   },
   "version": "0.1.0",
-  "repository": "ahdis/angular-oauth2-oidcgit ",
   "dependencies": {
     "jsrsasign": "^8.0.12"
   },

@@ -1,5 +1,5 @@
 # angular-oauth2-oidc-msar
-[![Build Status](https://travis-ci.org/ahdis/angular-oauth2-smart.svg?branch=master)](https://travis-ci.org/ahdis/angular-oauth2-smart)
+[![Build Status](https://travis-ci.org/ahdis/angular-oauth2-oidc.svg?branch=master)](https://travis-ci.org/ahdis/angular-oauth2-oidc)
 
 
 angular-oauth2-oidc-smart is an OAuth2 and OpenId Connect (OIDC) client for Angular.
